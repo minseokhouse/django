@@ -1,0 +1,170 @@
+{% load static %}
+<!-- chat/templates/chat/room.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Chat Room</title>
+    <link href="{% static 'css/room.css'%}" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+{#    <textarea id="chat-log" cols="100" rows="20"></textarea><br/>#}
+
+    <div class="col-sm-8 conversation">
+    <div class="row heading">
+        <!-- <div class="col-sm-8 col-xs-7 heading-name">
+        <a class="heading-name-meta">John Doe</a>
+        </div> -->
+    </div>
+
+    <div class="row message" id="conversation">
+
+
+        <div class="row message-body">
+        <div class="receiver">
+        <div id="chat-log" >
+            <table id="chat_Table">
+                <thead>
+
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        </div>
+
+        </div>
+
+    </div>
+
+    <div class="row reply">
+        <input id="chat-message-input" type="text">
+        <span id="chat-message-submit" type="button" value="Send">
+            <i class="fa-solid fa-paper-plane"></i>
+            <i class="fa fa-microphone fa-2x" aria-hidden="true"></i>
+
+        </span>
+    </div>
+    </div>
+</body>
+<!--room_name 을 핸들링 하는 json script-->
+{{ room_name|json_script:"room-name" }}
+{{ login_user.email|json_script:"user_email" }}
+{{ login_user.email|json_script:"user_id" }}
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+
+    // <!--roomName 변수에 room_name 할당-->
+// JSON.parse() 메소드 : json 문자열의 구문을 분석하고 결과로 javascript 값이나 객체 생성
+    const roomName = JSON.parse(document.getElementById('room-name').textContent);
+    const user_email = JSON.parse(document.getElementById('user_email').textContent);
+    const user_id = JSON.parse(document.getElementById('user_id').textContent);
+    console.log(roomName)
+    console.log(user_email)
+    console.log(user_id)
+    {#var roomName = "";#}
+    console.log('채팅방 입장');
+    var chatSocket = new WebSocket(
+        'ws://' + window.location.host +
+        '/ws/mypage/chat/' + '{{ room_name }}' + '/');
+    console.log('여기까지 1');
+        // chat-log id를 통해서 기존 message 에 추가해서 message 를 onmessage 해줌
+
+    // chatSocket에 onopen 메소드 지정
+    chatSocket.onopen = function (e) {
+        fetchMessages();
+    }
+
+    chatSocket.onmessage = function (e) {
+        console.log(e.data);
+        const data = JSON.parse(e.data);
+        if (data['command'] === 'messages') {
+            for (let i = 0; i < data['messages'].length; i++) {
+                createMessage(data['messages'][i]);
+            }
+        } else if (data['command'] === 'new_message') {
+            createMessage(data['message']);
+        }
+    };
+
+    chatSocket.onclose = function(e) {
+        console.log('강제종료');
+        console.error('Chat socket closed unexpectedly');
+    };
+
+    document.querySelector('#chat-message-input').focus();
+    document.querySelector('#chat-message-input').onkeyup = function(e) {
+        if (e.keyCode === 13) {  // enter, return
+            document.querySelector('#chat-message-submit').click();
+        }
+    };
+
+    document.querySelector('#chat-message-submit').onclick = function(e) {
+        const messageInputDom = document.querySelector('#chat-message-input');
+        const message = messageInputDom.value;
+        chatSocket.send(JSON.stringify({
+            'message': message,
+            'user': user_email,
+            'user_id': user_id,
+            'command': 'new_message',
+            {#'userinfo_object': {{ userinfo_object.name }}#}
+        }));
+
+        messageInputDom.value = '';
+    };
+
+     function fetchMessages() {
+        chatSocket.send(JSON.stringify({'command': 'fetch_messages'}))
+    }
+
+    function createMessage(data) {
+        var author = data['author'];
+        if(author == '{{ login_user.name }}') {
+            jQuery('#chat_Table').append("<tr><td class = 'right' style='float: right;'>" +  data.content + '</td></tr>');
+        }
+        else{
+             jQuery('#chat_Table').append("<tr><td class = 'left' style='float: left;'>" + author + ': ' + data.content + '</td></tr>');
+        }
+
+        jQuery('#chat-log').scrollTop(jQuery('#chat-log')[0].scrollHeight);
+        {#$("#test>tbody").append("<tr><td>Test Row Append</td></tr>");#}
+        {#jQuery('#chat-log').append(author + ': ' + data.content + '<br>');#}
+        {#document.querySelector('#chat-log').value += (author + ': ' + data.content + '\n');#}
+
+
+    }
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
