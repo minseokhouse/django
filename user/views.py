@@ -81,6 +81,12 @@ def logout(request):
     return redirect('login')
 
 
+def community(request):
+    return render(request,'user/community.html')
+
+def new_writing(request):
+    return render(request,'user/new_writing.html')
+
 def board(request):
     boards = Post.objects.all().select_related('author').order_by('-id')
     boards_count = len(boards)

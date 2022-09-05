@@ -14,138 +14,149 @@
     <link rel="stylesheet" href="{% static 'css/join_mentor.css' %}">
 
 </head>
+<script>
+    function checkGender(element) {
+  
+  const checkboxes 
+      = document.getElementsByName("gender");
+  
+  checkboxes.forEach((cb) => {
+    cb.checked = false;
+  })
+  
+  element.checked = true;
+}
+</script>
 <body>
 <main>
 
 <!-- header -->
 {% include "user/header.html" %}
-    <form action="" method="post" class="signForm" onsubmit="return validate()">
+    <form action="" method="post" class="signForm" enctype="multipart/form-data" onsubmit="return validate()">
         {% csrf_token %}
         <h1 class="signup">sign up</h1>
-        
-        <!-- <div class="img_frame"> -->
-            <!-- <div class="img_design"> -->
+        <div class="formframe">
+            <div class="form_design_img">
                 <div class="container">
                     <div class="image-upload" id="image-upload">
-                        <div class = "img_bg">
-                            <img id = "user_img" class = "user_img" src="{% static 'image/user.jpg' %}"></img>
+                        <div class = "img_container">
+                            <div class = "img_bg" id="img_bg" >
+                                <img src="{% static 'image/user.jpg' %}" id = "user_img" class = "user_img" ></img>
+                            </div>
+                            <div class="button">
+                                <label class="img_select" for="chooseFile">파일 선택</label>
+                            </div>
                         </div>
-                        <div class="img_up">
-                            <form method="post" enctype="multipart/form-data">
-                                <div class="button">
-                                    <label for="chooseFile">
-                                        👉 CLICK HERE! 👈
-                                    </label>
-                                </div>
-                                <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
-                            <!-- </form> -->
+                        <div class="file_open">
+                            <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
+                            
                             
                             <div class="fileContainer">
                                 <div class="fileInput">
                                     <p>FILE NAME: </p>
                                     <p id="fileName"></p>
-                                </div>
-                                <div class="buttonContainer">
-                                    <div class="submitButton" id="submitButton">SUBMIT</div>
+                                    <div class="buttonContainer">
+                                        <div class="submitButton" id="submitButton">SUBMIT</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                       
                     </div>
-                    
-                    <div class="image-show" id="image-show">ddddddddd</div>
                 </div>  
             </div>
-        </div>
-        <div class="formframe">
-            <div class="form_design">                           
+            <div class="form_design"> 
+                <div class="info_text_name">이름 : </div>                       
                 <input type="text" id="name" name="name" class="name" placeholder="이름">
                 <div id="nameError" class="error"></div>
             
             </div>
-            <div class="form_design">                           
+            <div class="form_design">    
+                <div class="info_text_nickname">닉네임 : </div>                        
                 <input type="text" id="nickname" name="nickname" class="nickname" placeholder="닉네임">
                 <div id="nicknameError" class="error"></div>
             
             </div>
             <div class="form_design">
+                <div class="info_text_phone">전화번호 : </div> 
                 <input type="number" id="tel" name="tel" class="cellphoneNo" placeholder="전화번호">
                 <div id="cellphoneNoError" class="error"></div>
-            
             </div>
-            
+
             <div class="form_design">
-                <!-- <div class="space"> -->
+                <div class="info_text_birthday">생년월일 : </div> 
                 <input type="number" id="birthday" name="birthday" class="birthday" placeholder="생년월일">
-                <div id="birthdayNoError" class="error"></div>
-                    <!-- <select class = "gender_select">
-                        <option>--선택--</option>
-                        <option>남</option>
-                        <option>여</option>
-                    </select> -->
-            </div>
-            <div class="form_design_gender">
-                <input type="button" value="남" class="male"></input>
-                <input type="button" value="여" class="female"></input>
-                
-            
+                <div id="birthdayError" class="error"></div>
             </div>
             
-        </div>
-
-
-        <div class = "formframe">
             <div class="form_design">
+                <div class="info_text_gender">성별 : </div> 
+                <div class="gender_select">
+                    <div class="gender_male">
+                        <div class="space">
+                            <input type="checkbox" class = "male" name="gender" value="male" onclick="checkGender(this)"/>
+                            <label class="gender_text">남</label>
+
+                        </div>
+                    </div>
+                    <div class="gender_female">
+                        <div class="space">
+                            <input type="checkbox" class = "female" name="gender" value="female" onclick="checkGender(this)" />
+                            <label class="gender_text">여</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form_design">
+                <div class="info_text_id">아이디 : </div> 
                 <input type="text" id="user_id" name="user_id" class="user_id" placeholder="아이디">
                 <div id="user_idError" class="error"></div>
             </div>
             <div class="form_design">
+                <div class="info_text_pw">비밀번호  : </div> 
                 <input type="password" id="password" name="password" class="pw" placeholder="비밀번호">
                 <div id="passwordError" class="error"></div>
             </div>
             <div class="form_design">
+                <div class="info_text_pwCheck">비밀번호 확인 : </div> 
                 <input type="password" id="passwordCheck" name="passwordCheck" class="pw" placeholder="비밀번호 확인">
                 <div id="passwordCheckError" class="error"></div>
             </div>
-        </div>
-
-
-        <div class="formframe">
             <div class="form_design">
-                <div class = "univerinfo">학교/학과</div>
+                <div class = "info_text_univerinfo">학교/학과 : </div>
                 <div class="space">
                     <select class="university">
                         <option>대학교 데이터</option>
                     </select>
-                    <input type="text" id= "" name="department" class="department" placeholder="학과">
+                    <input type="text" id= "department" name="department" class="department" placeholder="학과">
                     <div id="departmentError" class="error"></div>
                 </div>
             </div>
             <div class="form_design">
-                <div class = "univerinfo">재학여부</div>
+                <div class = "info_text_attending">재학여부 : </div>
                 <div class="space">
-                    <select class="university">
+                    <select class="attending">
                         <option>--선택--</option>
                         <option>재학</option>
                         <option>휴학</option>
                         <option>졸업</option>
                     </select>
-                    <div id="emailError" class="error"></div>
+                    <div id="attendingError" class="error"></div>
                 </div>
             </div>
-        </div>
-
-        <div class="formframe">
             <div class="form_design">
-                <input type="text" id= "" name="title" class="title" placeholder="자기소개 제목">
+                <div class = "info_text_title">자기소개 제목 : </div>
+                <input type="text" id= "" name="title" class="title" placeholder="제목을 입력해주세요.">
                     <div id="titleError" class="error"></div>
             </div>
-            <div class="form_design">
-                <input type="text" id= "" name="description" class="description" placeholder="자기소개 내용">
+            <div class="form_design_description">
+                <div class = "info_text_description">자기소개 내용 : </div>
+                <textarea  id= "" name="description" class="description" placeholder="내용을 입력해주세요."></textarea>
                     <div id="descriptionError" class="error"></div>
             </div>
         </div>
         <input type="submit" class="sign_btn" value="JOIN"/>
-    </form>
+
     </form>
 
 </main>
