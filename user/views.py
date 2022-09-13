@@ -85,26 +85,13 @@ def community(request):
     return render(request,'user/community.html')
 
 def new_writing(request):
-    return render(request,'user/new_writing.html')
-
-def board(request):
-    boards = Post.objects.all().select_related('author').order_by('-id')
-    boards_count = len(boards)
-    page = request.GET.get('page', 1)
-    paginator = Paginator(boards, 5)
-    board_list = paginator.get_page(page)
-    return render(request, 'user/board.html',
-                  {'boards': boards, 'board_list': board_list, 'boards_count': boards_count, 'page': page})
-
-
-def board_write(request):
     login_session = request.session.get('login_session', '')
     context = {'login_session': login_session}
 
     if request.method == 'GET':
         write_form = BoardWriteForm()
         context['forms'] = write_form
-        return render(request, 'user/board_write.html', context)
+        return render(request, 'user/new_writing.html', context)
 
     elif request.method == 'POST':
         write_form = BoardWriteForm(request.POST)
@@ -119,13 +106,61 @@ def board_write(request):
 
             )
             post.save()
-            return redirect('/board')
+            return redirect('/community')
         else:
             context['forms'] = write_form
             if write_form.errors:
                 for value in write_form.errors.values():
                     context['error'] = value
-            return render(request, 'user/board_write.html', context)
+            return render(request, 'user/new_writing.html', context)
+
+
+
+    # return render(request,'user/new_writing.html')
+
+def community_post(request):
+    return render(request,'user/community_post.html')
+
+
+def board(request):
+    boards = Post.objects.all().select_related('author').order_by('-id')
+    boards_count = len(boards)
+    page = request.GET.get('page', 1)
+    paginator = Paginator(boards, 5)
+    board_list = paginator.get_page(page)
+    return render(request, 'user/board.html',
+                  {'boards': boards, 'board_list': board_list, 'boards_count': boards_count, 'page': page})
+
+
+# def board_write(request):
+#     login_session = request.session.get('login_session', '')
+#     context = {'login_session': login_session}
+
+#     if request.method == 'GET':
+#         write_form = BoardWriteForm()
+#         context['forms'] = write_form
+#          return render(request,'user/new_writing.html')
+
+#     elif request.method == 'POST':
+#         write_form = BoardWriteForm(request.POST)
+
+#         if write_form.is_valid():
+
+#             post = Post(
+#                 title=write_form.title,
+#                 text=write_form.text,
+#                 author_id=request.session['user'],
+#                 show_ct=0
+
+#             )
+#             post.save()
+#             return redirect('/new_writing')
+#         else:
+#             context['forms'] = write_form
+#             if write_form.errors:
+#                 for value in write_form.errors.values():
+#                     context['error'] = value
+#              return render(request,'user/new_writing.html')
 
 
 def board_detail(request, boardid):
@@ -189,6 +224,8 @@ def board_modify(request, boardid):
                     context['error'] = value
             return render(request, 'user/board_modify.html', context)
 
+def cover_letter(request):
+    return render(request,'user/cover_letter.html')
 
 def new_comment(request, boardid):
     filled_form = CommentForm(request.POST)

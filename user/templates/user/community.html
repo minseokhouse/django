@@ -29,25 +29,53 @@
 
         <div class="menu_line"></div>
         <div class="write_btn">
-          <div class="writing_btn">
+          <a class="writing_btn" href="{% url 'new_writing' %}">
             새 글쓰기
-          </div>
+          </a>
         </div>
-
 
         <div class="tab-content">
           <div class="content_bg">
             <div class="content_line">
               <div class = "content">
-                <a class = "content_main" href="{% url 'new_writing' %}">
+                <a class = "content_main" href="{% url 'community_post' %}">
                   <div class="title">
-                    <span class="user">[멘티]</span>
-                    <span class="commutitle">수학문제 알려주실 멘토님 구합니다!</span>
+                    <span class="commutitle">OO대 면접 도와드립니다~!</span>
                   </div>
                   <div class="description">
-                    <div>모집인원 : 00명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
+                    <div class="description_info">
+                      <div class="description_text">모집 구분 : 면접</div>
+                      <div class="description_text">모집 인원 : 4명</div>
+                      <div class="description_text">진행 방식 : 온라인</div>
+                      <div class="description_text">시작 예정 : 2022년 10월 1일</div>
+                      <div class="description_text">모집 마감 : 2022년 9월 30일</div>
+                    </div>
+                  </div>
+                  <div class="content_bottom"></div>
+                  <div class="bottom">
+                    <div class="userimg">
+                      <img src="{% static 'image/user.jpg' %}" id = "user_img" class = "user_img" ></img>
+                    </div>
+                    <div class="user_info">
+                      <span class="username">[멘토]김멘토</span>
+                      <span class="post_date">2022-09-12</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class = "content">
+                <a class = "content_main" href="{% url 'new_writing' %}">
+                  <div class="title">
+                    <span class="commutitle">OO대 면접 도와드립니다~!</span>
+                  </div>
+                <div class="description">
+                      <div class="description_info">
+                        <div class="description_text">모집 구분 : 면접</div>
+                        <div class="description_text">모집 인원 : 4명</div>
+                        <div class="description_text">진행 방식 : 온라인</div>
+                        <div class="description_text">시작 예정 : 2022년 10월 1일</div>
+                        <div class="description_text">모집 마감 : 2022년 9월 30일</div>
+                      </div>
                   </div>
                   <div class="content_bottom"></div>
                   <div class="bottom">
@@ -64,61 +92,16 @@
               <div class = "content">
                 <a class = "content_main" href="{% url 'new_writing' %}">
                   <div class="title">
-                    <span class="user">[멘토]</span>
                     <span class="commutitle">OO대 면접 도와드립니다~!</span>
                   </div>
-                  <div class="description">
-                    <div class="description_text">
-                      <div>모집인원 : 4명</div>
-                      <div>진행방식 : 온라인</div>
-                      <div>모집 마감 : 2022년 9월 30일</div>
-                    </div>
-                  </div>
-                  <div class="content_bottom"></div>
-                  <div class="bottom">
-                    <div class="userimg">
-                      <img src="{% static 'image/user.jpg' %}" id = "user_img" class = "user_img" ></img>
-                    </div>
-                    <div class="comment_info">
-                      <span class="username">김멘토</span>
-                      <span class="comment_date">2022-09-12</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class = "content">
-                <a class = "content_main" href="{% url 'new_writing' %}">
-                  <div class="title">
-                    <span class="user">[멘토]</span>
-                    <span class="commutitle">OO대 면접 도와드립니다~!</span>
-                  </div>
-                  <div class="description">
-                    <div>모집인원 : 4명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
-                  </div>
-                  <div class="content_bottom"></div>
-                  <div class="bottom">
-                    <div class="userimg">
-                      <img src="{% static 'image/user.jpg' %}" id = "user_img" class = "user_img" ></img>
-                    </div>
-                    <div class="comment_info">
-                      <span class="username">김멘토</span>
-                      <span class="comment_date">2022-09-12</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class = "content">
-                <a class = "content_main" href="{% url 'new_writing' %}">
-                  <div class="title">
-                    <span class="user">[멘토]</span>
-                    <span class="commutitle">OO대 면접 도와드립니다~!</span>
-                  </div>
-                  <div class="description">
-                    <div>모집인원 : 4명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
+                <div class="description">
+                      <div class="description_info">
+                        <div class="description_text">모집 구분 : 면접</div>
+                        <div class="description_text">모집 인원 : 4명</div>
+                        <div class="description_text">진행 방식 : 온라인</div>
+                        <div class="description_text">시작 예정 : 2022년 10월 1일</div>
+                        <div class="description_text">모집 마감 : 2022년 9월 30일</div>
+                      </div>
                   </div>
                   <div class="content_bottom"></div>
                   <div class="bottom">
@@ -137,13 +120,16 @@
               <div class = "content">
                 <a class = "content_main" href="{% url 'new_writing' %}">
                   <div class="title">
-                    <span class="user">[멘티]</span>
                     <span class="commutitle">수학문제 알려주실 멘토님 구합니다!</span>
                   </div>
                   <div class="description">
-                    <div>모집인원 : 00명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
+                      <div class="description_info">
+                        <div class="description_text">모집 구분 : 면접</div>
+                        <div class="description_text">모집 인원 : 4명</div>
+                        <div class="description_text">진행 방식 : 온라인</div>
+                        <div class="description_text">시작 예정 : 2022년 10월 1일</div>
+                        <div class="description_text">모집 마감 : 2022년 9월 30일</div>
+                      </div>
                   </div>
                   <div class="content_bottom"></div>
                   <div class="bottom">
@@ -151,7 +137,7 @@
                       <img src="{% static 'image/user.jpg' %}" id = "user_img" class = "user_img" ></img>
                     </div>
                     <div class="comment_info">
-                      <span class="username">김멘토</span>
+                      <span class="username">[멘티]김멘티</span>
                       <span class="comment_date">2022-09-12</span>
                     </div>
                   </div>
@@ -160,13 +146,16 @@
               <div class = "content">
                 <a class = "content_main" href="{% url 'new_writing' %}">
                   <div class="title">
-                    <span class="user">[멘티]</span>
                     <span class="commutitle">수학문제 알려주실 멘토님 구합니다!</span>
                   </div>
                   <div class="description">
-                    <div>모집인원 : 00명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
+                      <div class="description_info">
+                        <div class="description_text">모집 구분 : 면접</div>
+                        <div class="description_text">모집 인원 : 4명</div>
+                        <div class="description_text">진행 방식 : 온라인</div>
+                        <div class="description_text">시작 예정 : 2022년 10월 1일</div>
+                        <div class="description_text">모집 마감 : 2022년 9월 30일</div>
+                      </div>
                   </div>
                   <div class="content_bottom"></div>
                   <div class="bottom">
@@ -174,7 +163,7 @@
                       <img src="{% static 'image/user.jpg' %}" id = "user_img" class = "user_img" ></img>
                     </div>
                     <div class="comment_info">
-                      <span class="username">김멘토</span>
+                      <span class="username">[멘티]김멘티</span>
                       <span class="comment_date">2022-09-12</span>
                     </div>
                   </div>
@@ -189,30 +178,6 @@
               <div class = "content">
                 <a class = "content_main" href="{% url 'new_writing' %}">
                   <div class="title">
-                    <span class="user">[멘티]</span>
-                    <span class="commutitle">수학문제 알려주실 멘토님 구합니다!</span>
-                  </div>
-                  <div class="description">
-                    <div>모집인원 : 00명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
-                  </div>
-                  <div class="content_bottom"></div>
-                  <div class="bottom">
-                    <div class="userimg">
-                      <img src="{% static 'image/user.jpg' %}" id = "user_img" class = "user_img" ></img>
-                    </div>
-                    <div class="comment_info">
-                      <span class="username">김멘토</span>
-                      <span class="comment_date">2022-09-12</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class = "content">
-                <a class = "content_main" href="{% url 'new_writing' %}">
-                  <div class="title">
-                    <span class="user">[멘토]</span>
                     <span class="commutitle">OO대 면접 도와드립니다~!</span>
                   </div>
                   <div class="description">
@@ -237,7 +202,6 @@
               <div class = "content">
                 <a class = "content_main" href="{% url 'new_writing' %}">
                   <div class="title">
-                    <span class="user">[멘토]</span>
                     <span class="commutitle">OO대 면접 도와드립니다~!</span>
                   </div>
                   <div class="description">
@@ -260,7 +224,6 @@
               <div class = "content">
                 <a class = "content_main" href="{% url 'new_writing' %}">
                   <div class="title">
-                    <span class="user">[멘토]</span>
                     <span class="commutitle">OO대 면접 도와드립니다~!</span>
                   </div>
                   <div class="description">
@@ -285,13 +248,16 @@
               <div class = "content">
                 <a class = "content_main" href="{% url 'new_writing' %}">
                   <div class="title">
-                    <span class="user">[멘티]</span>
                     <span class="commutitle">수학문제 알려주실 멘토님 구합니다!</span>
                   </div>
                   <div class="description">
-                    <div>모집인원 : 00명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
+                      <div class="description_info">
+                        <div class="description_text">모집 구분 : 면접</div>
+                        <div class="description_text">모집 인원 : 4명</div>
+                        <div class="description_text">진행 방식 : 온라인</div>
+                        <div class="description_text">시작 예정 : 2022년 10월 1일</div>
+                        <div class="description_text">모집 마감 : 2022년 9월 30일</div>
+                      </div>
                   </div>
                   <div class="content_bottom"></div>
                   <div class="bottom">
@@ -308,13 +274,16 @@
               <div class = "content">
                 <a class = "content_main" href="{% url 'new_writing' %}">
                   <div class="title">
-                    <span class="user">[멘티]</span>
                     <span class="commutitle">수학문제 알려주실 멘토님 구합니다!</span>
                   </div>
                   <div class="description">
-                    <div>모집인원 : 00명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
+                      <div class="description_info">
+                        <div class="description_text">모집 구분 : 면접</div>
+                        <div class="description_text">모집 인원 : 4명</div>
+                        <div class="description_text">진행 방식 : 온라인</div>
+                        <div class="description_text">시작 예정 : 2022년 10월 1일</div>
+                        <div class="description_text">모집 마감 : 2022년 9월 30일</div>
+                      </div>
                   </div>
                   <div class="content_bottom"></div>
                   <div class="bottom">
@@ -331,185 +300,12 @@
             </div>
           </div><!--멘토 탭 끝 -->
               
-                    <!--멘토 탭 시작 -->
-          <div class="content_bg">
-            <div class="content_line">
-              <div class = "content">
-                <a class = "content_main" href="{% url 'new_writing' %}">
-                  <div class="title">
-                    <span class="user">[멘티]</span>
-                    <span class="commutitle">수학문제 알려주실 멘토님 구합니다!</span>
-                  </div>
-                  <div class="description">
-                    <div>모집인원 : 00명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
-                  </div>
-                  <div class="content_bottom"></div>
-                  <div class="bottom">
-                    <div class="userimg">
-                      <img src="{% static 'image/user.jpg' %}" id = "user_img" class = "user_img" ></img>
-                    </div>
-                    <div class="comment_info">
-                      <span class="username">김멘토</span>
-                      <span class="comment_date">2022-09-12</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class = "content">
-                <a class = "content_main" href="{% url 'new_writing' %}">
-                  <div class="title">
-                    <span class="user">[멘토]</span>
-                    <span class="commutitle">OO대 면접 도와드립니다~!</span>
-                  </div>
-                  <div class="description">
-                    <div class="description_text">
-                      <div>모집인원 : 4명</div>
-                      <div>진행방식 : 온라인</div>
-                      <div>모집 마감 : 2022년 9월 30일</div>
-                    </div>
-                  </div>
-                  <div class="content_bottom"></div>
-                  <div class="bottom">
-                    <div class="userimg">
-                      <img src="{% static 'image/user.jpg' %}" id = "user_img" class = "user_img" ></img>
-                    </div>
-                    <div class="comment_info">
-                      <span class="username">김멘토</span>
-                      <span class="comment_date">2022-09-12</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class = "content">
-                <a class = "content_main" href="{% url 'new_writing' %}">
-                  <div class="title">
-                    <span class="user">[멘토]</span>
-                    <span class="commutitle">OO대 면접 도와드립니다~!</span>
-                  </div>
-                  <div class="description">
-                    <div>모집인원 : 4명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
-                  </div>
-                  <div class="content_bottom"></div>
-                  <div class="bottom">
-                    <div class="userimg">
-                      <img src="{% static 'image/user.jpg' %}" id = "user_img" class = "user_img" ></img>
-                    </div>
-                    <div class="comment_info">
-                      <span class="username">김멘토</span>
-                      <span class="comment_date">2022-09-12</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class = "content">
-                <a class = "content_main" href="{% url 'new_writing' %}">
-                  <div class="title">
-                    <span class="user">[멘토]</span>
-                    <span class="commutitle">OO대 면접 도와드립니다~!</span>
-                  </div>
-                  <div class="description">
-                    <div>모집인원 : 4명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
-                  </div>
-                  <div class="content_bottom"></div>
-                  <div class="bottom">
-                    <div class="userimg">
-                      <img src="{% static 'image/user.jpg' %}" id = "user_img" class = "user_img" ></img>
-                    </div>
-                    <div class="comment_info">
-                      <span class="username">김멘토</span>
-                      <span class="comment_date">2022-09-12</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="content_line">
-              <div class = "content">
-                <a class = "content_main" href="{% url 'new_writing' %}">
-                  <div class="title">
-                    <span class="user">[멘티]</span>
-                    <span class="commutitle">수학문제 알려주실 멘토님 구합니다!</span>
-                  </div>
-                  <div class="description">
-                    <div>모집인원 : 00명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
-                  </div>
-                  <div class="content_bottom"></div>
-                  <div class="bottom">
-                    <div class="userimg">
-                      <img src="{% static 'image/user.jpg' %}" id = "user_img" class = "user_img" ></img>
-                    </div>
-                    <div class="comment_info">
-                      <span class="username">김멘토</span>
-                      <span class="comment_date">2022-09-12</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class = "content">
-                <a class = "content_main" href="{% url 'new_writing' %}">
-                  <div class="title">
-                    <span class="user">[멘티]</span>
-                    <span class="commutitle">수학문제 알려주실 멘토님 구합니다!</span>
-                  </div>
-                  <div class="description">
-                    <div>모집인원 : 00명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
-                  </div>
-                  <div class="content_bottom"></div>
-                  <div class="bottom">
-                    <div class="userimg">
-                      <img src="{% static 'image/user.jpg' %}" id = "user_img" class = "user_img" ></img>
-                    </div>
-                    <div class="comment_info">
-                      <span class="username">김멘토</span>
-                      <span class="comment_date">2022-09-12</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div><!--멘토 탭 끝 -->
-
-
           <!--멘티 탭 시작 -->
           <div class="content_bg">
             <div class="content_line">
               <div class = "content">
                 <a class = "content_main" href="{% url 'new_writing' %}">
                   <div class="title">
-                    <span class="user">[멘티]</span>
-                    <span class="commutitle">수학문제 알려주실 멘토님 구합니다!</span>
-                  </div>
-                  <div class="description">
-                    <div>모집인원 : 00명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
-                  </div>
-                  <div class="content_bottom"></div>
-                  <div class="bottom">
-                    <div class="userimg">
-                      <img src="{% static 'image/user.jpg' %}" id = "user_img" class = "user_img" ></img>
-                    </div>
-                    <div class="comment_info">
-                      <span class="username">김멘토</span>
-                      <span class="comment_date">2022-09-12</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class = "content">
-                <a class = "content_main" href="{% url 'new_writing' %}">
-                  <div class="title">
-                    <span class="user">[멘토]</span>
                     <span class="commutitle">OO대 면접 도와드립니다~!</span>
                   </div>
                   <div class="description">
@@ -534,7 +330,6 @@
               <div class = "content">
                 <a class = "content_main" href="{% url 'new_writing' %}">
                   <div class="title">
-                    <span class="user">[멘토]</span>
                     <span class="commutitle">OO대 면접 도와드립니다~!</span>
                   </div>
                   <div class="description">
@@ -557,7 +352,6 @@
               <div class = "content">
                 <a class = "content_main" href="{% url 'new_writing' %}">
                   <div class="title">
-                    <span class="user">[멘토]</span>
                     <span class="commutitle">OO대 면접 도와드립니다~!</span>
                   </div>
                   <div class="description">
@@ -582,13 +376,16 @@
               <div class = "content">
                 <a class = "content_main" href="{% url 'new_writing' %}">
                   <div class="title">
-                    <span class="user">[멘티]</span>
                     <span class="commutitle">수학문제 알려주실 멘토님 구합니다!</span>
                   </div>
                   <div class="description">
-                    <div>모집인원 : 00명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
+                      <div class="description_info">
+                        <div class="description_text">모집 구분 : 면접</div>
+                        <div class="description_text">모집 인원 : 4명</div>
+                        <div class="description_text">진행 방식 : 온라인</div>
+                        <div class="description_text">시작 예정 : 2022년 10월 1일</div>
+                        <div class="description_text">모집 마감 : 2022년 9월 30일</div>
+                      </div>
                   </div>
                   <div class="content_bottom"></div>
                   <div class="bottom">
@@ -605,13 +402,16 @@
               <div class = "content">
                 <a class = "content_main" href="{% url 'new_writing' %}">
                   <div class="title">
-                    <span class="user">[멘티]</span>
                     <span class="commutitle">수학문제 알려주실 멘토님 구합니다!</span>
                   </div>
                   <div class="description">
-                    <div>모집인원 : 00명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
+                      <div class="description_info">
+                        <div class="description_text">모집 구분 : 면접</div>
+                        <div class="description_text">모집 인원 : 4명</div>
+                        <div class="description_text">진행 방식 : 온라인</div>
+                        <div class="description_text">시작 예정 : 2022년 10월 1일</div>
+                        <div class="description_text">모집 마감 : 2022년 9월 30일</div>
+                      </div>
                   </div>
                   <div class="content_bottom"></div>
                   <div class="bottom">
@@ -628,185 +428,13 @@
             </div>
           </div><!--멘티 탭 끝 -->
 
-                    <!--멘토 탭 시작 -->
-          <div class="content_bg">
-            <div class="content_line">
-              <div class = "content">
-                <a class = "content_main" href="{% url 'new_writing' %}">
-                  <div class="title">
-                    <span class="user">[멘티]</span>
-                    <span class="commutitle">수학문제 알려주실 멘토님 구합니다!</span>
-                  </div>
-                  <div class="description">
-                    <div>모집인원 : 00명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
-                  </div>
-                  <div class="content_bottom"></div>
-                  <div class="bottom">
-                    <div class="userimg">
-                      <img src="{% static 'image/user.jpg' %}" id = "user_img" class = "user_img" ></img>
-                    </div>
-                    <div class="comment_info">
-                      <span class="username">김멘토</span>
-                      <span class="comment_date">2022-09-12</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class = "content">
-                <a class = "content_main" href="{% url 'new_writing' %}">
-                  <div class="title">
-                    <span class="user">[멘토]</span>
-                    <span class="commutitle">OO대 면접 도와드립니다~!</span>
-                  </div>
-                  <div class="description">
-                    <div class="description_text">
-                      <div>모집인원 : 4명</div>
-                      <div>진행방식 : 온라인</div>
-                      <div>모집 마감 : 2022년 9월 30일</div>
-                    </div>
-                  </div>
-                  <div class="content_bottom"></div>
-                  <div class="bottom">
-                    <div class="userimg">
-                      <img src="{% static 'image/user.jpg' %}" id = "user_img" class = "user_img" ></img>
-                    </div>
-                    <div class="comment_info">
-                      <span class="username">김멘토</span>
-                      <span class="comment_date">2022-09-12</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class = "content">
-                <a class = "content_main" href="{% url 'new_writing' %}">
-                  <div class="title">
-                    <span class="user">[멘토]</span>
-                    <span class="commutitle">OO대 면접 도와드립니다~!</span>
-                  </div>
-                  <div class="description">
-                    <div>모집인원 : 4명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
-                  </div>
-                  <div class="content_bottom"></div>
-                  <div class="bottom">
-                    <div class="userimg">
-                      <img src="{% static 'image/user.jpg' %}" id = "user_img" class = "user_img" ></img>
-                    </div>
-                    <div class="comment_info">
-                      <span class="username">김멘토</span>
-                      <span class="comment_date">2022-09-12</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class = "content">
-                <a class = "content_main" href="{% url 'new_writing' %}">
-                  <div class="title">
-                    <span class="user">[멘토]</span>
-                    <span class="commutitle">OO대 면접 도와드립니다~!</span>
-                  </div>
-                  <div class="description">
-                    <div>모집인원 : 4명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
-                  </div>
-                  <div class="content_bottom"></div>
-                  <div class="bottom">
-                    <div class="userimg">
-                      <img src="{% static 'image/user.jpg' %}" id = "user_img" class = "user_img" ></img>
-                    </div>
-                    <div class="comment_info">
-                      <span class="username">김멘토</span>
-                      <span class="comment_date">2022-09-12</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="content_line">
-              <div class = "content">
-                <a class = "content_main" href="{% url 'new_writing' %}">
-                  <div class="title">
-                    <span class="user">[멘티]</span>
-                    <span class="commutitle">수학문제 알려주실 멘토님 구합니다!</span>
-                  </div>
-                  <div class="description">
-                    <div>모집인원 : 00명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
-                  </div>
-                  <div class="content_bottom"></div>
-                  <div class="bottom">
-                    <div class="userimg">
-                      <img src="{% static 'image/user.jpg' %}" id = "user_img" class = "user_img" ></img>
-                    </div>
-                    <div class="comment_info">
-                      <span class="username">김멘토</span>
-                      <span class="comment_date">2022-09-12</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class = "content">
-                <a class = "content_main" href="{% url 'new_writing' %}">
-                  <div class="title">
-                    <span class="user">[멘티]</span>
-                    <span class="commutitle">수학문제 알려주실 멘토님 구합니다!</span>
-                  </div>
-                  <div class="description">
-                    <div>모집인원 : 00명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
-                  </div>
-                  <div class="content_bottom"></div>
-                  <div class="bottom">
-                    <div class="userimg">
-                      <img src="{% static 'image/user.jpg' %}" id = "user_img" class = "user_img" ></img>
-                    </div>
-                    <div class="comment_info">
-                      <span class="username">김멘토</span>
-                      <span class="comment_date">2022-09-12</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div><!--멘토 탭 끝 -->
-
           <!--스터디 탭 시작 -->
           <div class="content_bg">
             <div class="content_line">
               <div class = "content">
                 <a class = "content_main" href="{% url 'new_writing' %}">
                   <div class="title">
-                    <span class="user">[멘티]</span>
-                    <span class="commutitle">수학문제 알려주실 멘토님 구합니다!</span>
-                  </div>
-                  <div class="description">
-                    <div>모집인원 : 00명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
-                  </div>
-                  <div class="content_bottom"></div>
-                  <div class="bottom">
-                    <div class="userimg">
-                      <img src="{% static 'image/user.jpg' %}" id = "user_img" class = "user_img" ></img>
-                    </div>
-                    <div class="comment_info">
-                      <span class="username">김멘토</span>
-                      <span class="comment_date">2022-09-12</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class = "content">
-                <a class = "content_main" href="{% url 'new_writing' %}">
-                  <div class="title">
-                    <span class="user">[멘토]</span>
-                    <span class="commutitle">OO대 면접 도와드립니다~!</span>
+                    <span class="commutitle">OO대 OO과 면접 스터디</span>
                   </div>
                   <div class="description">
                     <div class="description_text">
@@ -830,7 +458,6 @@
               <div class = "content">
                 <a class = "content_main" href="{% url 'new_writing' %}">
                   <div class="title">
-                    <span class="user">[멘토]</span>
                     <span class="commutitle">OO대 면접 도와드립니다~!</span>
                   </div>
                   <div class="description">
@@ -853,7 +480,6 @@
               <div class = "content">
                 <a class = "content_main" href="{% url 'new_writing' %}">
                   <div class="title">
-                    <span class="user">[멘토]</span>
                     <span class="commutitle">OO대 면접 도와드립니다~!</span>
                   </div>
                   <div class="description">
@@ -878,13 +504,14 @@
               <div class = "content">
                 <a class = "content_main" href="#">
                   <div class="title">
-                    <span class="user">[멘티]</span>
                     <span class="commutitle">수학문제 알려주실 멘토님 구합니다!</span>
                   </div>
-                  <div class="description">
-                    <div>모집인원 : 00명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
+                    <div class="description">
+                    <div class="description_text">모집 구분 : 면접</div>
+                    <div class="description_text">모집 인원 : 4명</div>
+                    <div class="description_text">진행 방식 : 온라인</div>
+                    <div class="description_text">시작 예정 : 2022년 10월 1일</div>
+                    <div class="description_text">모집 마감 : 2022년 9월 30일</div>
                   </div>
                   <div class="content_bottom"></div>
                   <div class="bottom">
@@ -901,13 +528,14 @@
               <div class = "content">
                 <a class = "content_main" href="#">
                   <div class="title">
-                    <span class="user">[멘티]</span>
                     <span class="commutitle">수학문제 알려주실 멘토님 구합니다!</span>
                   </div>
-                  <div class="description">
-                    <div>모집인원 : 00명</div>
-                    <div>진행방식 : 온라인</div>
-                    <div>모집 마감 : 2022년 9월 30일</div>
+                    <div class="description">
+                    <div class="description_text">모집 구분 : 면접</div>
+                    <div class="description_text">모집 인원 : 4명</div>
+                    <div class="description_text">진행 방식 : 온라인</div>
+                    <div class="description_text">시작 예정 : 2022년 10월 1일</div>
+                    <div class="description_text">모집 마감 : 2022년 9월 30일</div>
                   </div>
                   <div class="content_bottom"></div>
                   <div class="bottom">

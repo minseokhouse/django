@@ -1,14 +1,17 @@
-.background{
+.join_background{
     margin-top: 150px;
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
+
 
 .mentor{
     width: 500px;
     height: 450px;
     /* margin: 0 auto; */
-    margin-left: 400px;
+    /* margin-left: 400px; */
     /* background-color: #49b8a0; */
     border: 3px solid #10c298;
 }
