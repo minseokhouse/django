@@ -12,10 +12,12 @@
   }
 
   .signForm{
-    width: 700px;
-    height: 1250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align:center;
-    margin-left: 600px;
+    /* margin-left: 600px; */
     margin-top: 80px;
    
   }
@@ -507,6 +509,11 @@
     overflow-y: hidden;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
+  }
+
+  .sign_btn_bg{
+    margin-top: 20px;
+    width: 500px;
   }
 
   .sign_btn{
