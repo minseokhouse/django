@@ -69,7 +69,7 @@
   /* margin: 30px; */
   margin-bottom: 50px;
   padding: 10px 10px;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .idForm:hover  {
@@ -79,7 +79,7 @@
 .passForm{
   width: 300px;
   border-bottom: 2px solid #adadad;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   padding: 10px 10px;
 }
 .passForm:hover  {
@@ -104,6 +104,50 @@
   font-size:16px;
   height:25px;
   /* background: none; */
+}
+
+.select_user{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  margin-left: 55px;
+  margin-bottom: 20px;
+}
+
+.space{
+  display: flex;
+  background-color: white;
+}
+
+/* .gender_select{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  margin-left: 55px;
+} */
+
+input[class="mentor"]{
+  position: relative;
+  top: 1.5px;
+}
+
+input[class="mentee"]{
+  position: relative;
+  /* top: 1.5px; */
+}
+
+
+input[type="checkbox"] {
+  width: 25px; 
+  height: 25px; 
+}
+
+.user_text{
+  width: 50px;
+  color: #636e72;
+  margin-right: 50px;
 }
 
 

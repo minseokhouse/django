@@ -13,6 +13,18 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
 </head>
+<script>
+    function checkTypeUser(element) {
+  
+        const checkboxes = document.getElementsByName("type_user");
+  
+        checkboxes.forEach((cb) => {
+        cb.checked = false;
+    })
+  
+    element.checked = true;
+    }
+</script>
 <body>
 <main>
         <!-- header -->
@@ -27,12 +39,27 @@
                         </div>
                     </div>
                     <div class = "logininfo">
-                        <h2>Signin (or 이미지)</h2>
+                        <h2>Signin</h2>
                         <div class="idForm">
                             <input name="email" type="text" class="id" placeholder="아이디">
                         </div>
                         <div class="passForm">
                             <input name="password" type="password" class="pw" placeholder="비밀번호">
+                        </div>
+
+                        <div class = "select_user">
+                            <div class="gender_male">
+                                <div class="space">
+                                    <input type="checkbox" id = "mentor" class = "mentor" name="type_user" value="mentor" onclick="checkTypeUser(this)"/>
+                                    <label class="user_text">멘토</label>
+                                </div>
+                            </div>
+                            <div class="gender_female">
+                                <div class="space">
+                                    <input type="checkbox" id = "mentee" class = "mentee" name="type_user" value="mentee" onclick="checkTypeUser(this)" />
+                                    <label class="user_text">멘티</label>
+                                </div>
+                            </div>
                         </div>
         
                         <input type="submit" class="login-btn" value="LOGIN"/>

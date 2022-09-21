@@ -6,6 +6,8 @@
     /* background-color: rgb(248, 249, 250); */
     background-color: white;
   }
+
+
   
   body{
     height: 100%;
@@ -74,6 +76,25 @@
     justify-content: center;
     background-color: #2D9BF0;
     border-radius: 30px;
+  }
+
+  .idcheck_btn{
+    width: 100px;
+    height: 40px;
+    margin-left: 20px;
+    margin-top: 10px;
+    border: 3px solid gainsboro;
+    border-radius: 10px;
+
+  }
+
+  .nickNamecheck_btn{
+    width: 100px;
+    height: 40px;
+    margin-left: 20px;
+    margin-top: 10px;
+    border: 3px solid gainsboro;
+    border-radius: 10px;
   }
 
   .img_select {
@@ -225,9 +246,9 @@
   }
 
   .info_text_gender{
-    width: 130px;
+    /* width: 130px; */
     margin-left: 10px;
-    margin-right: 23px;
+    /* margin-right: 23px; */
     display: flex;
     align-items: center;
     font-weight: bold;
@@ -238,6 +259,7 @@
     flex-direction: row;
     text-align: center;
     align-items: center;
+    margin-left: 55px;
   }
 
   input[class="male"]{
@@ -318,7 +340,7 @@
   }
 
   .info_text_title{
-    width: 180px;
+    width: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -448,7 +470,6 @@
   .university{
     width: 125px;
     height: 40px;
-    margin-left: 50px;
     margin-top: 10px;
     background-color: white;
     color: #636e72;
@@ -463,17 +484,30 @@
     color: #636e72;
   }
 
+  .student_Id   
+  {
+    width: 200px;
+    border:none;
+    outline:none;
+    color: #636e72;
+    font-size:16px;
+    height:25px;
+    background: none;
+    margin-top: 15px;
+    margin-left: 20px;
+    border-bottom: 2px solid #adadad;
+  }
+  
   .attending{
     width: 100px;
     height: 40px;
-    margin-left: 50px;
     margin-top: 10px;
     background-color: white;
     color: #636e72;
   }
   
   .department{
-    width: 200px;
+    /* width: 200px; */
     height: 20px;
     margin-top: 20px;
     border:none;
@@ -509,7 +543,10 @@
     overflow-y: hidden;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
+    resize: none;
   }
+
+  /* textarea{resize:none;} */
 
   .sign_btn_bg{
     margin-top: 20px;
@@ -530,8 +567,33 @@
 
   
   .error {
+    width: 100%;
+    margin-top: 20px;
+    margin-right: 10px;
     color:red;
-    font-size: 3px;
+    font-size: 7px;
   }
 
+  .genderError{
+    margin-right: 10px;
+    color:red;
+    font-size: 7px;
+  }
+
+  .departmentError{
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 10px;
+    color:red;
+    font-size: 7px;
+  }
+
+  .descriptionError{
+    display: flex;
+    justify-content: flex-start;
+    color:red;
+    font-size: 10px;
+    margin-left: 10px;
+    margin-top: 5px;
+  }
     
